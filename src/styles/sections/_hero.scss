@@ -1,0 +1,135 @@
+@use "../config/config" as *;
+
+/* Header section */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+
+    .navigation {
+        display: flex;
+        @include flex-content(flex, space-between, center);
+
+        &__link {
+            text-decoration: none;
+            
+            img {
+                filter: brightness(0) invert(1);
+                width: 8.56rem;
+            }
+        }
+
+        .list {
+            @include flex-content(flex, null, center);
+
+            &__item {
+                list-style: none;
+                margin-left: 3rem;
+
+                a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: var(--white);
+                    font-size: clamp(1rem, 1.2vw, 1.25rem);
+                    font-family: var(--secondary-font);
+                    position: relative;
+
+                    &::before {
+                        position: absolute;
+                        content: "";
+                        bottom: -0.2rem;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: var(--white);
+                    }
+                }
+            }
+        }
+
+        .hamburger {
+            display: none;
+        }
+    }
+}
+
+
+/* Hero section */ 
+.hero {
+    width: 100vw;
+    height: 100vh;
+    @include flex-content(flex, null, end);
+    padding: 3rem 3rem 5rem;
+    position: relative;
+
+    &__video--bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    &__overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(7, 39, 39, 0.46) 0%, rgba(7, 39, 39, 0.66) 100%);
+        z-index: -1;
+      }
+
+    .wrapper {
+        max-width: 40%;
+
+        .hero__heading {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 4rem;
+
+            .heroline__container {
+                overflow: hidden;
+                // background-color: red;
+                margin: .5rem 0;
+
+                &--text {
+                    font-family: var(--secondary-font);
+                    text-transform: uppercase;
+                    font-size: clamp(1rem, 4.2vw, 4.1rem);
+                    line-height: .8;
+                    padding-top: .3rem;
+                    color: var(--white);
+                }
+            }
+
+            .heroline__container2 {
+                // background-color: green;
+                
+                &--text {
+                    font-family: var(--primary-font);
+                    text-transform: uppercase;
+                    font-size: clamp(1rem, 4.2vw, 4.1rem);
+                    line-height: .8;
+                    padding-top: .3rem;
+                    color: var(--white);
+                }
+            }
+        }
+
+        .hero__link {
+            padding: 1.5rem 2.5rem;
+            border: 1px solid var(--white);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: .8rem;
+            font-size: clamp(1rem, 1.1vw, 1.1rem);
+            font-family: var(--secondary-font);
+        }
+
+    }
+}

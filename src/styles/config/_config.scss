@@ -1,0 +1,15 @@
+// mixins
+
+@mixin flex-content ($flex, $justify-content, $align-items) {
+    @if $flex != null {
+        display: $flex;
+    }
+
+    @if $justify-content != null {
+        justify-content: $justify-content;
+    }
+
+    @if $align-items != null {
+        align-items: $align-items;
+    }
+}
