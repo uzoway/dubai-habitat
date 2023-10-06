@@ -14,6 +14,7 @@
 </head>
 <body>
 
+    <!-- Header section -->
     <header class="header">
         <nav class="navigation">
             <a href="#" class="navigation__link">
@@ -21,11 +22,31 @@
             </a>
 
             <ul class="list">
-                <li class="list__item"><a href="#">about us</a></li>
-                <li class="list__item"><a href="#">the team</a></li>
-                <li class="list__item"><a href="#">our partners</a></li>
-                <li class="list__item"><a href="#">why dubai</a></li>
-                <li class="list__item"><a href="#">contact us</a></li>
+                <li class="list__item">
+                    <a href="#" aria-label="about us">
+                        <div data-char="about us">about us</div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" aria-label="the team">
+                        <div data-char="the team">the team</div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" aria-label="our partners">
+                        <div data-char="our partners">our partners</div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" aria-label="why dubai">
+                        <div data-char="why dubai">why dubai</div>
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" aria-label="contact us">
+                        <div data-char="contact us">contact us</div>
+                    </a>
+                </li>
             </ul>
 
             <button class="hamburger">
@@ -35,8 +56,8 @@
         </nav>
     </header>
 
+    <!-- Main section -->
     <main class="container">
-
         <!-- Hero section -->
         <div class="hero">
             <div class="wrapper">
@@ -52,7 +73,11 @@
                     </div>
                 </h1>
 
-                <a href="#" class="hero__link">Get in touch</a>
+                <a href="#" class="hero__link" aria-label="Get In Touch">
+                    <div class="hero__link--wrapper">
+                        <div class="attribute" data-char="Get in touch">Get in touch</div>
+                    </div>
+                </a>
             </div>
 
             <video width="640" height="240" autoplay muted loop class="hero__video--bg">
@@ -61,9 +86,10 @@
             </video>
             <div class="hero__overlay"></div>
         </div>
-
     </main>
-<!-- 
+
+
+    <!-- 
     <main class="container" id="home">
 
     
@@ -126,7 +152,6 @@
 
     <!-- GSAP core, Flip, scrolltrigger and text plugin CDN  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/CustomEase.min.js"></script>
 
