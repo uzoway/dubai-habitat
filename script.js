@@ -19,7 +19,7 @@ requestAnimationFrame(raf);
 
 
 // Register scrolltrigger plugin
-gsap.registerPlugin(ScrollTrigger, CustomEase, Draggable);
+gsap.registerPlugin(ScrollTrigger, CustomEase);
 
 //Custom eases 
 CustomEase.create("drop", "M0,0 C0.007,0.011 0.01,-0.002 0.019,0 0.072,0.012 0.078,0.009 0.09,0.014 0.116,0.024 0.091,0.022 0.168,0.036 0.203,0.041 0.474,0.132 0.544,0.206 0.725,0.382 0.916,0.642 0.976,0.864 0.99,0.912 0.993,1 1,1");
@@ -37,23 +37,40 @@ CustomEase.create("ease-in-out-expo", "1,0,0,1");
 CustomEase.create("ease-in-out-circ", "0.785,0.135,0.15,0.86");
 
 
-// Function to run the gsap animations only when the DOM is done loading
-function initializeAnimations() {
+// // Function to run the gsap animations only when the DOM is done loading
+// function initializeAnimations() {
 
-  // Hero animation using matchmedia
-  let mm = gsap.matchMedia();
+//   // Hero animation using matchmedia
+//   let mm = gsap.matchMedia();
 
-  mm.add({ isDesktop: "(min-width: 280px) and (prefers-reduced-motion: no-preference)"}, (context) => {
-    let { isDesktop } = context.conditions;
+//   mm.add({ isDesktop: "(min-width: 280px) and (prefers-reduced-motion: no-preference)"}, (context) => {
+//     let { isDesktop } = context.conditions;
 
-  })
-
-
-}
+//   })
 
 
+// }
 
 
 
-// Run initializeAnimations as the DOM is completely loaded
-window.addEventListener("DOMContentLoaded", initializeAnimations);
+
+
+// // Run initializeAnimations as the DOM is completely loaded
+// window.addEventListener("DOMContentLoaded", initializeAnimations);
+
+
+// ABOUT SECTION MODAL TOGGLE
+const modal = document.querySelector("#modal");
+const modalCloser = document.querySelector("#modal-closer");
+const modalOpener = document.querySelector("#modal-opener");
+const aboutSection = document.querySelector("#about-section");
+
+modalOpener.addEventListener("click", () => {
+  modal.classList.add("active");
+  aboutSection.classList.add("active");
+});
+
+modalCloser.addEventListener("click", () => {
+  modal.classList.remove("active");
+  aboutSection.classList.remove("active");
+});
