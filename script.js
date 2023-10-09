@@ -18,10 +18,10 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 
-// Register scrolltrigger plugin
+// REGISTER SCROLLTRIGGER & CUSTOM EASE PLUGIN
 gsap.registerPlugin(ScrollTrigger, CustomEase);
 
-//Custom eases 
+// CUSTOM EASES
 CustomEase.create("drop", "M0,0 C0.007,0.011 0.01,-0.002 0.019,0 0.072,0.012 0.078,0.009 0.09,0.014 0.116,0.024 0.091,0.022 0.168,0.036 0.203,0.041 0.474,0.132 0.544,0.206 0.725,0.382 0.916,0.642 0.976,0.864 0.99,0.912 0.993,1 1,1");
 CustomEase.create("ease-out-quad", "0.25,0.46,0.45,0.94");
 CustomEase.create("ease-out-cubic", "0.215,0.61,0.355,1");
@@ -51,10 +51,6 @@ CustomEase.create("ease-in-out-circ", "0.785,0.135,0.15,0.86");
 
 // }
 
-
-
-
-
 // // Run initializeAnimations as the DOM is completely loaded
 // window.addEventListener("DOMContentLoaded", initializeAnimations);
 
@@ -74,3 +70,18 @@ modalCloser.addEventListener("click", () => {
   modal.classList.remove("active");
   aboutSection.classList.remove("active");
 });
+
+
+// SPLIDE CAROUSEL 
+var splide = new Splide( '.splide', {
+  perMove: 1,
+  gap: "1rem",
+  autoWidth: "true",
+  autoHeight: "true",
+  type: "loop",
+  arrows: false,
+  pagination: false,
+  autoScroll: {
+    speed: 2,
+  }
+}).mount( window.splide.Extensions );
