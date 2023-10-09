@@ -1,0 +1,225 @@
+@use "../config/config" as *;
+
+.team {
+    min-height: 100vh;
+    width: 100%;
+    background-color: var(--beige);
+    padding: 5rem 3rem;
+    font-family: var(--secondary-font);
+    color: var(--dark-green);
+
+    @media (max-width: 768px) {
+        padding: 5rem 1.5rem;
+    }
+
+    &__wrapper {
+        width: 100%;
+        height: inherit;
+        @include flex-content(flex, space-between, flex-start);
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+            gap: 3.5rem;
+        }
+
+        .left__container {
+            flex-basis: 28%;
+            @include flex-content(flex, null, null);
+            flex-direction: column;
+            gap: 2rem;
+
+            @media (max-width: 768px) {
+                flex-basis: 100%;
+                text-align: center;
+            }
+
+            .team__heading {
+                text-transform: uppercase;
+
+                span {
+                    font-size: clamp(.9rem, 1.6vw, 1.25rem);
+                }
+            }
+
+            .team__mainParagraph {
+                @include flex-content(flex, null, null);
+                flex-direction: column;
+                line-height: 1;
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
+                .text__wrapper {
+                    margin: .2rem 0;
+                    overflow: hidden;
+
+                    span {
+                        font-size: clamp(1.3rem, 3.5vw, 2.875rem);
+                        transform: translateY(0%);
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .team__mobileParagraph {
+                display: none;
+
+                @media (max-width: 768px) {
+                    display: block;
+                    line-height: .95;
+                    // background-color: red;
+
+                    .text__wrapper {
+                        overflow: hidden;
+    
+                        span {
+                            font-size: clamp(1.3rem, 3.5vw, 2.875rem);
+                            transform: translateY(0%);
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+
+            .team__paragraph {
+                color: var(--light-green);
+                font-size: clamp(.95rem, 1.3vw, 1.125rem);
+                line-height: 1.6;
+            }
+        }
+
+        .right__container {
+            flex-basis: 65%;
+            padding-right: 3rem;
+
+            @media (max-width: 768px) {
+                display: none;
+                flex-basis: 100%;
+                padding-right: 0;
+            }
+
+            @media (max-width: 500px) {
+                display: block;
+            }
+
+            .wrapper {
+                width: 100%;
+                @include flex-content(flex, space-between, null);
+                flex-wrap: wrap;
+                row-gap: 6rem;
+
+                @media (max-width: 768px) {
+                    row-gap: 4rem;
+                }
+
+                &__item {
+                    flex-basis: 43%;
+
+                    @media (max-width: 889px) {
+                        flex-basis: 70%;
+                    }
+
+                    @media (max-width: 768px) {
+                        flex-basis: 100%;
+                        text-align: center;
+                    }
+
+                    .image__container {
+                        width: 14.625rem;
+                        aspect-ratio: 1/1;
+                        overflow: hidden;
+                        margin-bottom: 2rem;
+
+                        @media (max-width: 768px) {
+                            margin: 0 auto 2rem;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .item__heading {
+                        font-size: clamp(.9rem, 1.3vw, 1.125rem);
+                        font-weight: 400;
+                        margin-bottom: .6rem;
+                    }
+
+                    .item__mainParagraph {
+                        font-weight: 400;
+                        margin-bottom: 2rem;
+
+                        span {
+                            font-size: clamp(1.4rem, 2vw, 1.5rem);
+                        }
+                    }
+
+                    .item__paragraph {
+                        font-size: clamp(.9rem, 1vw, .9rem);
+                        line-height: 1.6;
+                        margin-bottom: 1.7rem;
+                    }
+                }
+            }
+        }
+
+        .splide {
+            display: none;
+
+            @media (max-width: 768px) {
+                display: block;
+                width: 100%;
+
+                .splide__list {
+                    @include flex-content(flex, space-between, null);
+                    column-gap: 3rem;
+
+                    .splide__slide {
+                        flex-basis: 55%;
+
+                        .image__container {
+                            width: 14.625rem;
+                            aspect-ratio: 1/1;
+                            overflow: hidden;
+                            margin-bottom: 2rem;
+    
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+
+                        .splide__heading {
+                            font-size: clamp(.9rem, 1.3vw, 1.125rem);
+                            font-weight: 400;
+                            margin-bottom: .6rem;
+                        }
+
+                        .splide__mainParagraph {
+                            font-weight: 400;
+                            margin-bottom: 2rem;
+    
+                            span {
+                                font-size: clamp(1.4rem, 2vw, 1.5rem);
+                            }
+                        }
+    
+                        .splide__paragraph {
+                            font-size: clamp(.9rem, 1vw, .9rem);
+                            line-height: 1.6;
+                            margin-bottom: 1.7rem;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 500px) {
+                display: none;
+            }
+        }
+    }
+}
