@@ -71,17 +71,32 @@ modalCloser.addEventListener("click", () => {
   aboutSection.classList.remove("active");
 });
 
+document.addEventListener( 'DOMContentLoaded', function() {
+  // SPLIDE CAROUSEL 
+  var splide = new Splide( '.splide', {
+    perMove: 1,
+    gap: "1rem",
+    autoWidth: "true",
+    autoHeight: "true",
+    type: "loop",
+    arrows: false,
+    pagination: false,
+    autoScroll: {
+      speed: 2,
+    }
+  }).mount( window.splide.Extensions );
 
-// SPLIDE CAROUSEL 
-var splide = new Splide( '.splide', {
-  perMove: 1,
-  gap: "1rem",
-  autoWidth: "true",
-  autoHeight: "true",
-  type: "loop",
-  arrows: false,
-  pagination: false,
-  autoScroll: {
-    speed: 2,
-  }
-}).mount( window.splide.Extensions );
+  var splide = new Splide( '#contact-splide', {
+    perMove: 1,
+    gap: "1rem",
+    autoWidth: "true",
+    autoHeight: "true",
+    type: "loop",
+    arrows: false,
+    pagination: false,
+    pauseOnHover: false,
+    autoScroll: {
+      speed: 4,
+    }
+  }).mount( window.splide.Extensions );
+} );
