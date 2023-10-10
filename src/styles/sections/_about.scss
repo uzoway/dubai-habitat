@@ -7,6 +7,8 @@
     @include flex-content(flex, center, center);
     position: relative;
     overflow-x: hidden;
+    z-index: 1;
+    background-color: var(--white-000);
 
 
     &.active::before {
