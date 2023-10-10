@@ -119,6 +119,8 @@
 
 .container {
     position: relative;
+    min-height: 100vh;
+    width: 100vw;
 }
 
 /* Mobile navigation */ 
@@ -185,6 +187,7 @@
     @include flex-content(flex, null, end);
     padding: 0 3rem 3rem;
     position: relative;
+    z-index: 1;
 
     @media (max-width: 863px) {
         padding: 0 1.5rem 2rem;
