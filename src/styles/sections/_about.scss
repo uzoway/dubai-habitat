@@ -1,7 +1,6 @@
 @use "../config/config" as *;
 
 .about {
-    min-height: 120vh;
     padding: 5rem 0;
     width: 100vw;
     @include flex-content(flex, center, center);
@@ -141,7 +140,7 @@
             }   
 
             &:hover, &:focus {
-                background-color: var(--green);
+                background-color: var(--light-green);
             }
             
             &:hover .char, &:focus .char {

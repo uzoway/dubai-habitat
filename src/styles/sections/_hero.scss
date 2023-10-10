@@ -231,7 +231,6 @@
 
             .heroline__container {
                 overflow: hidden;
-                // background-color: red;
                 margin: .3rem 0;
 
                 &--text {
@@ -248,7 +247,6 @@
             }
 
             .heroline__container2 {
-                // background-color: green;
                 
                 &--text {
                     font-family: var(--primary-font);
@@ -303,5 +301,99 @@
             }    
         }
 
+    }
+}
+
+/* 404 error page */
+.error__container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    padding: 1.5rem 3rem 2.5rem;
+    @include flex-content(flex, space-between, null);
+    flex-direction: column;
+    font-family: var(--secondary-font);
+    color: var(--dark-green);
+
+    @media (max-width: 768px) {
+        padding: 1.5rem 1.5rem 2.5rem;
+    }
+
+    img {
+        width: 8.56rem;
+    }
+
+    .error__heading {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
+
+        .errorline__container {
+            overflow: hidden;
+
+            &--text {
+                font-family: var(--secondary-font);
+                text-transform: uppercase;
+                font-size: clamp(2.1rem, 4.2vw, 4.1rem);
+                font-weight: 400;
+                line-height: 1;
+                padding-top: .3rem;
+                transform: translateY(0%);
+                display: inline-block;
+            }
+        }
+
+        .errorline__container2 {
+            
+            &--text {
+                font-family: var(--primary-font);
+                text-transform: uppercase;
+                font-size: clamp(2.1rem, 4.2vw, 4.1rem);
+                line-height: .8;
+                font-weight: 400;
+                padding-top: .3rem;
+                transform: translateY(0%);
+                display: inline-block;
+            }
+        }
+    }
+
+    .error__link {
+        padding: 1.25rem 2.25rem;
+        border: 1px solid var(--dark-green);
+        color: var(--dark-green);
+        text-decoration: none;
+        border-radius: .8rem;
+        display: inline-block;
+        outline: none;
+        transition: .5s var(--ease-out-cubic);
+
+        &--wrapper {
+            overflow: hidden;
+
+            .attribute {
+                position: relative;
+                transition: .5s var(--ease-out-cubic);
+                font-size: clamp(.9rem, 1.1vw, 1.1rem);
+                font-family: var(--secondary-font);
+
+                &::before {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: attr(data-char);
+                    transform: translateY(100%);
+                }
+            }
+        }   
+
+        &:hover, &:focus {
+            background-color: var(--dark-green);
+            color: var(--white);
+        }
+        
+        &:hover .attribute, &:focus .attribute {
+            transform: translateY(-100%);
+        }    
     }
 }
