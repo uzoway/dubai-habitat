@@ -25,15 +25,19 @@
         &__link {
             text-decoration: none;
             
-            img {
+            &--image {
                 filter: brightness(0) invert(1);
                 width: 8.56rem;
+                transform: translate(25%, -75%) rotateX(45deg);
+                opacity: 0;
             }
         }
 
         .list {
             @include flex-content(flex, null, center);
             gap: 2rem;
+            opacity: 0;
+            transform: translateX(10%);
 
             @media (max-width: 799px) {
                 display: none;
@@ -179,7 +183,6 @@
     }
 }
 
-
 /* Hero section */ 
 .hero {
     width: 100vw;
@@ -241,8 +244,8 @@
                     line-height: .8;
                     padding-top: .3rem;
                     color: var(--white);
-                    transform: translateY(0%);
                     display: inline-block;
+                    will-change: transform;
                 }
             }
 
@@ -256,8 +259,8 @@
                     font-weight: 400;
                     padding-top: .3rem;
                     color: var(--white);
-                    transform: translateY(0%);
                     display: inline-block;
+                    will-change: transform;
                 }
             }
         }
@@ -395,5 +398,63 @@
         &:hover .attribute, &:focus .attribute {
             transform: translateY(-100%);
         }    
+    }
+}
+
+.preloader {
+    position: fixed;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    @include flex-content(flex, center, center);
+
+    &__logoContainer {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        z-index: inherit;
+        opacity: 0;
+        transform: translateY(70%);
+
+        &--overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #072727c0;
+            z-index: 2;
+            transform: translateX(0%);
+        }
+
+        img {
+            width: 10.125rem;
+            filter: invert(1);
+            transition: filter .4s ease;
+            position: relative;
+        }
+    }
+
+    &__overlay--green {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--dark-green);
+        z-index: 1;
+    }
+
+    &__overlay--light {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 115%;
+        background-color: var(--light-green);
+        z-index: 0;
     }
 }
