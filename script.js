@@ -71,7 +71,7 @@ modalCloser.addEventListener("click", () => {
   aboutSection.classList.remove("active");
 });
 
-document.addEventListener( 'DOMContentLoaded', function() {
+document.addEventListener( 'DOMContentLoaded', function() {  
   // SPLIDE CAROUSEL 
   var splide = new Splide( '.splide', {
     perMove: 1,
@@ -86,6 +86,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
     }
   }).mount( window.splide.Extensions );
 
+
+  // Contact us image slider carousel
   var splide = new Splide( '#contact-splide', {
     perMove: 1,
     gap: "1rem",
@@ -94,9 +96,11 @@ document.addEventListener( 'DOMContentLoaded', function() {
     type: "loop",
     arrows: false,
     pagination: false,
-    pauseOnHover: false,
+    drag: false,
+    swipe: false,
     autoScroll: {
-      speed: 4,
+      speed: 3.2,
+      pauseOnHover: false,
     }
   }).mount( window.splide.Extensions );
 } );
