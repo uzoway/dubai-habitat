@@ -71,7 +71,55 @@ modalCloser.addEventListener("click", () => {
   aboutSection.classList.remove("active");
 });
 
+
+// Loader & Hero section animation
+const homeLoaderAnimation = () => {
+  const heroTl = gsap.timeline({
+    defaults: {
+      ease: "ease-out-quart"
+    }
+  })
+
+  .to(".preloader__logoContainer", { autoAlpha: 1, y: 0, duration: .7, delay: 1 })
+  .to(".preloader__logoContainer--overlay", { xPercent: "35" }, 1.3)
+  .to(".preloader__logoContainer--overlay", { xPercent: "100", delay: .6, duration: 0.8 })
+  .to(".preloader__logoContainer", { autoAlpha: 0, yPercent: "-100", duration: 0.6 })
+  .to(".preloader__overlay--green", { yPercent: "-100", ease: "ease-in-out-quart", duration: 1.1 }, ">-0.73")
+  .to(".preloader__overlay--light", { yPercent: "-100", ease: "ease-in-out-quart", duration: 1.3 }, "<")
+  .to(".navigation__link--image", { autoAlpha: 1, x: "0", y: "0", rotateX: "0deg", duration: 1.1 }, ">-0.2")
+  .to("#navigation-link", { autoAlpha: 1, x: 0, duration: 1.2 }, ">-0.9")
+  .from("#header-heading", { y: 200, skewY: 15, duration: .8, stagger: 0.2 }, ">-1.2")
+  .fromTo("#hero-link", { autoAlpha: 0, skewY: 5, y: 50 }, { autoAlpha: 1, skewY: 0, y: 0, duration: .4, }, ">-0.6")
+}
+
+const sectionsAnimation = () => {
+  // About section title & subtitle animation
+  const textAnimation = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about",
+      start: "top 20%"
+    }
+  });
+  textAnimation.from("#section-text", { y: 200, skewY: 15, duration: 0.8, stagger: 0.1, ease: "ease-out-quart" })
+  .from(".about__image", { clipPath: "polygon(0 100%, 100% 100%, 100% 99.9%, 0% 99.9%)", duration: 1.2, ease: "ease-in-out-quart" }, "<")
+
+
+  // About section paragraph & button fade effect
+  const aboutFadeEffect = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".about__fade", 
+      start: "top 90%"
+    }
+  });
+  aboutFadeEffect.fromTo(".about__fade", { opacity: 0 }, { autoAlpha: 1, stagger: 0.2, duration: .8, ease: "ease-out-quart" })
+}
+
+
 document.addEventListener( 'DOMContentLoaded', function() {  
+
+  homeLoaderAnimation();
+  sectionsAnimation();
+
   // SPLIDE CAROUSEL 
   var splide = new Splide( '.splide', {
     perMove: 1,
@@ -85,7 +133,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
       speed: 2,
     }
   }).mount( window.splide.Extensions );
-
 
   // Contact us image slider carousel
   var splide = new Splide( '#contact-splide', {
