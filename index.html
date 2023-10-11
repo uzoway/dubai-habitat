@@ -18,10 +18,10 @@
     <header class="header">
         <nav class="navigation">
             <a href="#" class="navigation__link">
-                <img src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1693311701/dubai-habitat/new-logo-v4_yabddd.webp" alt="logo of dubai habitat">
+                <img class="navigation__link--image" src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1693311701/dubai-habitat/new-logo-v4_yabddd.webp" alt="logo of dubai habitat">
             </a>
 
-            <ul class="list">
+            <ul class="list" id="navigation-link">
                 <li class="list__item">
                     <a href="#about-section" aria-label="about us" onclick="lenis.scrollTo('#about-section')">
                         <div data-char="about us">about us</div>
@@ -55,6 +55,17 @@
             </button>
         </nav>
     </header>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__overlay--green"></div>
+        <div class="preloader__overlay--light"></div>
+
+        <div class="preloader__logoContainer">
+            <div class="preloader__logoContainer--overlay"></div>
+            <img src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1697013159/dubai-habitat/new-logo-v4_hsy5ia.svg" alt="logo of dubai habitat" class="preloader__logo">
+        </div>
+    </div>
 
     <!-- Main section -->
     <main class="container">
@@ -96,17 +107,17 @@
             <div class="wrapper">
                 <h1 class="hero__heading">
                     <div class="heroline__container">
-                        <span class="heroline__container--text">your trusted</span>
+                        <span id="header-heading" class="heroline__container--text">your trusted</span>
                     </div>
                     <div class="heroline__container">
-                        <span class="heroline__container--text">partner in dubai</span>
+                        <span id="header-heading" class="heroline__container--text">partner in dubai</span>
                     </div>
                     <div class="heroline__container heroline__container2">
-                        <span class="heroline__container2--text">real estate</span>
+                        <span id="header-heading" class="heroline__container2--text">real estate</span>
                     </div>
                 </h1>
 
-                <a href="#" class="hero__link" aria-label="Get In Touch">
+                <a href="#" id="hero-link" class="hero__link" aria-label="Get In Touch">
                     <div class="hero__link--wrapper">
                         <div class="attribute" data-char="Get in touch">Get in touch</div>
                     </div>
@@ -124,18 +135,18 @@
         <section class="about" id="about-section">
             <div class="about__wrapper">
                 <h2 class="about__heading" aria-label="about us">
-                    <span class="about__heading--text">about us</span>
+                    <span id="section-text" class="about__heading--text">about us</span>
                 </h2>
 
                 <p class="about__mainParagraph" aria-label="Dubai Habitat is a leading real estate company offering prime properties in Dubai to global clients for investment or private use.">
                     <span class="text__wrapper">
-                        <span>Dubai Habitat is a leading real estate company</span>
+                        <span id="section-text">Dubai Habitat is a leading real estate company</span>
                     </span>
                     <span class="text__wrapper">
-                        <span>offering prime properties in Dubai to global clients</span>
+                        <span id="section-text">offering prime properties in Dubai to global clients</span>
                     </span>
                     <span class="text__wrapper">
-                        <span>for investment or private use.</span>
+                        <span id="section-text">for investment or private use.</span>
                     </span>
                 </p>
 
@@ -143,13 +154,13 @@
                     <img src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1696631483/dubai-habitat/Rectangle_11_uoashx.webp" alt="image of the skyline of dubai">
                 </div>
 
-                <p class="about__paragraph">
+                <p class="about__paragraph about__fade">
                     With 15+ years of experience in the high-end and luxury real estate market, we provide valuable insights
                     and guidance for informed investment decisions. Our diverse portfolio, combined with exclusive local developer
                     relationships, provides unparalleled investment opportunities and customer satisfaction.
                 </p>
 
-                <button id="modal-opener" class="modal__open" aria-label="Learn More">
+                <button id="modal-opener" class="modal__open about__fade" aria-label="Learn More">
                     <div class="modal__open--wrapper">
                         <div class="char" data-char="Learn more">Learn more</div>
                     </div>
