@@ -3,6 +3,8 @@
 .contact {
     background-color: var(--beige);
     padding: 5rem 0;
+    position: relative;
+    z-index: 1;
 
     &__wrapper {
         width: 100%;
@@ -163,7 +165,6 @@
 
         .bottom__container {
             width: 100%;
-            cursor: grab;
             margin-top: 5rem;
 
             .splide__slide {

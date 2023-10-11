@@ -7,6 +7,8 @@
     padding: 5rem 3rem;
     font-family: var(--secondary-font);
     color: var(--dark-green);
+    position: relative;
+    z-index: 1;
 
     @media (max-width: 768px) {
         padding: 5rem 1.5rem;
