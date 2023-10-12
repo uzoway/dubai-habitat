@@ -7,7 +7,6 @@
     left: 0;
     width: 100%;
     padding: 2rem 3rem 0;
-    z-index: 2;
 
     @media (max-width: 863px) {
         padding: 2rem 1.5rem 0;
@@ -21,9 +20,11 @@
         display: flex;
         @include flex-content(flex, space-between, center);
         
+        
 
         &__link {
             text-decoration: none;
+            z-index: 10;
             
             &--image {
                 filter: brightness(0) invert(1);
@@ -38,6 +39,7 @@
             gap: 2rem;
             opacity: 0;
             transform: translateX(10%);
+            z-index: 2;
 
             @media (max-width: 799px) {
                 display: none;
@@ -104,11 +106,14 @@
             outline: none;
             position: relative;
             display: none;
+            z-index: 10;
 
             @media (max-width: 799px) {
                 @include flex-content(flex, center, center);
                 flex-direction: column;
                 gap: .3rem;
+                transform: translate(-25%, -75%) rotateX(45deg);
+                opacity: 0;
             }
 
             &__line {
@@ -116,6 +121,29 @@
                 height: 2px;
                 border-radius: 1.5px;
                 background-color: var(--dark-green);
+                transition: transform .5s;
+                transform-origin: left;
+            }
+
+            &__line2 {
+                transition: transform 1s ease;
+                transform-origin: left;
+                width: 35%;
+                height: 2px;
+                border-radius: 1.5px;
+                background-color: var(--dark-green);
+                transition: transform .5s;
+                transform-origin: left;
+            }
+
+            &.active .hamburger__line2 {
+                transform: rotate(-45deg) translateY(100%);
+                transform-origin: left; 
+            }
+
+            &.active .hamburger__line {
+                transform: rotate(45deg) translateY(-100%);
+                transform-origin: left;
             }
         }
     }
@@ -129,13 +157,13 @@
 
 /* Mobile navigation */ 
 .mobile__nav {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: 0;
+    width: 100vw;
     height: 100vh;
     background-color: var(--dark-green);
-    z-index: 1;
+    z-index: 2;
     display: none;
     opacity: 0;
 
