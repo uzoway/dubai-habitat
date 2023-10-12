@@ -38,24 +38,6 @@ CustomEase.create("ease-in-out-circ", "0.785,0.135,0.15,0.86");
 CustomEase.create("card-reveal", "M0,0 C0.6,1.5 0,1 1,1 ");
 
 
-// // Function to run the gsap animations only when the DOM is done loading
-// function initializeAnimations() {
-
-//   // Hero animation using matchmedia
-//   let mm = gsap.matchMedia();
-
-//   mm.add({ isDesktop: "(min-width: 280px) and (prefers-reduced-motion: no-preference)"}, (context) => {
-//     let { isDesktop } = context.conditions;
-
-//   })
-
-
-// }
-
-// // Run initializeAnimations as the DOM is completely loaded
-// window.addEventListener("DOMContentLoaded", initializeAnimations);
-
-
 // ABOUT SECTION MODAL TOGGLE
 const modal = document.querySelector("#modal");
 const modalCloser = document.querySelector("#modal-closer");
@@ -88,9 +70,10 @@ const homeLoaderAnimation = () => {
   .to(".preloader__overlay--green", { yPercent: "-100", ease: "ease-in-out-quart", duration: 1.1 }, ">-0.73")
   .to(".preloader__overlay--light", { yPercent: "-100", ease: "ease-in-out-quart", duration: 1.3 }, "<")
   .to(".navigation__link--image", { autoAlpha: 1, x: "0", y: "0", rotateX: "0deg", duration: 1.1 }, ">-0.2")
+  .to(".hamburger", { autoAlpha: 1, x: "0", y: "0", rotateX: "0deg", duration: 1.1 }, "<")
   .to("#navigation-link", { autoAlpha: 1, x: 0, duration: 1.2 }, ">-0.9")
   .from("#header-heading", { y: 200, skewY: 15, duration: .8, stagger: 0.2 }, ">-1.2")
-  .fromTo("#hero-link", { autoAlpha: 0, skewY: 5, y: 50 }, { autoAlpha: 1, skewY: 0, y: 0, duration: .4, }, ">-0.6")
+  .fromTo("#hero-link", { autoAlpha: 0, skewY: 5, y: 50 }, { autoAlpha: 1, skewY: 0, y: 0, duration: .4, }, ">-0.6");
 }
 
 // About section animation
@@ -254,6 +237,23 @@ const offersCardsAnimation = () => {
   })
 }
 
+const mobileNavigationAnimation = () => {
+  const hamburger = document.querySelector(".hamburger");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+
+    const mobileNav = document.querySelector(".mobile__nav");
+
+    if(hamburger.classList.contains("active")) {
+      gsap.to(mobileNav, { opacity: 1, duration: 0.7, ease: "ease-out-quart" })
+    }
+    else {
+      gsap.to(mobileNav, { opacity: 0, duration: 0.7, ease: "ease-out-quart" })
+    }
+  })
+}
+
 
 document.addEventListener( 'DOMContentLoaded', function() {  
 
@@ -262,6 +262,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
   sectionsAnimation();
   partnersNumberCounter();
   offersCardsAnimation();
+  mobileNavigationAnimation();
 
   // SPLIDE CAROUSEL 
   var splide = new Splide( '.splide', {
