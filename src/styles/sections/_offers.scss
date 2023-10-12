@@ -29,6 +29,7 @@
                 font-weight: 400;
                 transform: translateY(0%);
                 display: inline-block;
+                will-change: transform;
             }
         }
 
@@ -46,6 +47,8 @@
                     font-family: var(--secondary-font);
                     font-size: clamp(.9rem, 3vw, 2.87rem);
                     white-space: nowrap;
+                    display: inline-block;
+                    will-change: transform;
                 }
             }
         }
@@ -64,6 +67,8 @@
                 aspect-ratio: 1/1;
                 border-radius: 10px;
                 padding: 1rem 1rem 0;
+                will-change: transform;
+                transform-style: preserve-3d;
 
                 @media (max-width: 1139px) {
                     flex-basis: 31.5%;

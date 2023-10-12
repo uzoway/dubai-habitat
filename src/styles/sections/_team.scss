@@ -37,9 +37,11 @@
 
             .team__heading {
                 text-transform: uppercase;
+                overflow: hidden;
 
                 span {
                     font-size: clamp(.9rem, 1.6vw, 1.25rem);
+                    display: inline-block;
                 }
             }
 
@@ -70,7 +72,6 @@
                 @media (max-width: 768px) {
                     display: block;
                     line-height: .95;
-                    // background-color: red;
 
                     .text__wrapper {
                         overflow: hidden;
