@@ -36,7 +36,7 @@
     <header class="header">
         <nav class="navigation">
             <a href="#" class="navigation__link">
-                <img class="navigation__link--image" src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1693311701/dubai-habitat/new-logo-v4_yabddd.webp" alt="logo of dubai habitat">
+                <img class="navigation__link--image" src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1697211429/dubai-habitat/new-logo-v4_q4befa.svg" alt="logo of dubai habitat">
             </a>
 
             <ul class="list" id="navigation-link">
@@ -81,7 +81,7 @@
 
         <div class="preloader__logoContainer">
             <div class="preloader__logoContainer--overlay"></div>
-            <img src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1697013159/dubai-habitat/new-logo-v4_hsy5ia.svg" alt="logo of dubai habitat" class="preloader__logo">
+            <img src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1697211429/dubai-habitat/new-logo-v4_q4befa.svg" alt="logo of dubai habitat" class="preloader__logo">
         </div>
     </div>
 
@@ -565,18 +565,21 @@
 
                     <form action="#" class="contact__form" autocomplete="on">
                         <div class="input__group input__50">
+                            <span class="error__message" id="error-1">Please fill out this field</span>
                             <label for="name" class="input__group--label"></label>
-                            <input type="text" id="name" name="name" placeholder="Name"  class="input__group--input">
+                            <input type="text" id="name" name="name" placeholder="Name" required class="input__group--input">
                         </div>
 
                         <div class="input__group input__50">
+                            <span class="error__message" id="error-2">Please fill out this field</span>
                             <label for="email" class="input__group--label"></label>
-                            <input type="email" id="email" name="email" placeholder="Email Address"  class="input__group--input">
+                            <input type="email" id="email" name="email" placeholder="Email Address" required class="input__group--input">
                         </div>
 
                         <div class="input__group">
+                            <span class="error__message" id="error-3">Please fill out this field</span>
                             <label for="phoneNumber" class="input__group--label"></label>
-                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number"  class="input__group--input">
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" required class="input__group--input">
                         </div>
 
                         <div class="input__group">
@@ -631,10 +634,13 @@
         <footer class="footer">
             <div class="footer__wrapper">
                 <div class="top__container">
-                    <img class="top__container--logo" src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1693311715/dubai-habitat/new-logo-v4_fubeij.webp" alt="logo of dubai habitat">
+                    <img class="top__container--logo" src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1697211429/dubai-habitat/new-logo-v4_q4befa.svg" alt="logo of dubai habitat">
 
                     <div class="right__container">
-                        <p class="right__container--text">info@dubai-habitat.com</p>
+                        <a href="mailto: info@dubai-habitat.com" class="right__container--text" aria-label="mailto: info@dubai-habitat.com">
+                            <div data-char="info@dubai-habitat.com">info@dubai-habitat.com</div>
+                        </a>
+
                         <div class="right__container--logos">
                             <a href="#">
                                 <img src="https://res.cloudinary.com/dp20bvzhn/image/upload/v1696963214/dubai-habitat/instagram_h2iuu3.webp" alt="logo of instagram">

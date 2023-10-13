@@ -78,7 +78,7 @@
 
                     div {
                         position: relative;
-                        transition: .8s var(--ease-out-cubic);
+                        transition: .9s var(--ease-out-quart);;
                         font-size: clamp(1rem, 1.1vw, 1.2rem);
 
                         &::before {
@@ -216,12 +216,12 @@
     width: 100vw;
     height: 100vh;
     @include flex-content(flex, null, end);
-    padding: 0 3rem 3rem;
+    padding: 0 2.875rem 3.5rem;
     position: relative;
     z-index: 1;
 
     @media (max-width: 863px) {
-        padding: 0 1.5rem 2rem;
+        padding: 0 1.875rem 3rem;
     }
 
     @media (max-width: 509px) {
@@ -438,6 +438,7 @@
     width: 100vw;
     height: 100vh;
     @include flex-content(flex, center, center);
+    opacity: 1;
 
     &__logoContainer {
         position: relative;
@@ -460,8 +461,6 @@
 
         img {
             width: 10.125rem;
-            filter: invert(1);
-            transition: filter .4s ease;
             position: relative;
         }
     }
