@@ -170,6 +170,16 @@
                         line-height: 1.6;
                         margin-bottom: 1.7rem;
                     }
+
+                    .item__icon {
+                        img {
+                            transition: .4s var(--ease-out-quart);
+                            
+                            &:hover {
+                                filter: invert(1);
+                            }
+                        }
+                    }
                 }
             }
         }

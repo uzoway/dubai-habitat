@@ -42,16 +42,21 @@ CustomEase.create("card-reveal", "M0,0 C0.6,1.5 0,1 1,1 ");
 const modal = document.querySelector("#modal");
 const modalCloser = document.querySelector("#modal-closer");
 const modalOpener = document.querySelector("#modal-opener");
-const aboutSection = document.querySelector("#about-section");
+const container = document.querySelector(".container");
+const header = document.querySelector(".header");
 
 modalOpener.addEventListener("click", () => {
   modal.classList.add("active");
-  aboutSection.classList.add("active");
+  container.classList.add("active");
+  container.style.position = "fixed";
+  header.classList.add("active");
 });
 
 modalCloser.addEventListener("click", () => {
   modal.classList.remove("active");
-  aboutSection.classList.remove("active");
+  container.classList.remove("active");
+  container.style.position = "relative";
+  header.classList.remove("active");
 });
 
 
