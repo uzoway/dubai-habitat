@@ -295,3 +295,29 @@ document.addEventListener( 'DOMContentLoaded', function() {
     }
   }).mount( window.splide.Extensions );
 } );
+
+
+// Form validation on submit
+document.querySelector(".submit__button").addEventListener("click", (e) => {
+  let inputs = document.querySelectorAll("input[required]");
+  let errorMessages = document.querySelectorAll(".error__message");
+
+  // Reset error messages
+  for (let i = 0; i < errorMessages.length; i++) {
+    errorMessages[i].style.display = "none";
+  }
+
+  let hasError = false;
+
+  for (let i = 0; i < inputs.length; i++) {
+    if (inputs[i].value.trim() === "") {
+      errorMessages[i].style.display = "block";
+      hasError = true;
+    }
+  }
+
+  if (hasError) {
+    e.preventDefault(); 
+  }
+});
+
