@@ -2,7 +2,7 @@
 
 .contact {
     background-color: var(--beige);
-    padding: 5rem 0;
+    padding: 6.25rem 0;
     position: relative;
     z-index: 1;
 
@@ -22,7 +22,12 @@
 
             @media (max-width: 768px) {
                 max-width: 100%;
-                padding: 0 1.5rem;
+                padding: 0 1.875rem;
+            }
+
+            @media (max-width: 375px) {
+                max-width: 100%;
+                padding: 0 1rem;
             }
 
             .contact__heading {
@@ -85,7 +90,16 @@
 
                 .input__group {
                     flex-basis: 100%;
-                    margin: .6rem 0;
+                    margin: 1.2rem 0;
+                    position: relative;
+
+                    .error__message {
+                        position: absolute;
+                        top: -35%;
+                        left: 0;
+                        color: var(--orange);
+                        display: none;
+                    }
 
                     input, textarea {
                         font-family: var(--secondary-font);

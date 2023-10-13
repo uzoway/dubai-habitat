@@ -1,7 +1,7 @@
 @use "../config/config" as *;
 
 .about {
-    padding: 5rem 0;
+    padding: 6.25rem 0;
     width: 100vw;
     @include flex-content(flex, center, center);
     position: relative;
@@ -32,12 +32,16 @@
     }
 
     @media (max-width: 768px) {
-        padding: 3rem 1.5rem;
+        padding: 5rem 1.875rem;
+    }
+
+    @media (max-width: 375px) {
+        padding: 3.75rem 1rem;
     }
 
     &__wrapper {
         text-align: center;
-        max-width: 70%;
+        max-width: 61%;
 
         @media (max-width: 768px) {
             max-width: 100%;
@@ -46,7 +50,7 @@
         .about__heading {
             overflow: hidden;
             line-height: .9;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
 
             span {
                 font-size: clamp(1rem, 1.1vw, 1.2rem);
@@ -63,7 +67,7 @@
         .about__mainParagraph {
             @include flex-content(flex, null, null);
             flex-direction: column;
-            margin-bottom: 2rem;
+            margin-bottom: 3.5rem;
 
             .text__wrapper {
                 overflow: hidden;
@@ -102,9 +106,9 @@
         .about__paragraph {
             color: var(--light-green);
             font-family: var(--secondary-font);
-            width: 90%;
+            width: 73%;
             line-height: 1.6;
-            margin: 2rem auto 2rem;
+            margin: 3.5rem auto 3rem;
             font-size: clamp(.8rem, 1.6vw, 1rem);
 
             @media (max-width: 768px) {

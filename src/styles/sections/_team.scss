@@ -4,14 +4,18 @@
     min-height: 100vh;
     width: 100%;
     background-color: var(--beige);
-    padding: 5rem 3rem;
+    padding: 6.25rem 2.875rem;
     font-family: var(--secondary-font);
     color: var(--dark-green);
     position: relative;
     z-index: 1;
 
     @media (max-width: 768px) {
-        padding: 5rem 1.5rem;
+        padding: 5rem 1.875rem;
+    }
+
+    @media (max-width: 375px) {
+        padding: 3.75rem 1rem;
     }
 
     &__wrapper {
@@ -28,7 +32,7 @@
             flex-basis: 28%;
             @include flex-content(flex, null, null);
             flex-direction: column;
-            gap: 2rem;
+            gap: 3.2rem;
 
             @media (max-width: 768px) {
                 flex-basis: 100%;
@@ -89,6 +93,7 @@
                 color: var(--light-green);
                 font-size: clamp(.95rem, 1.3vw, 1.125rem);
                 line-height: 1.6;
+                width: 80%;
             }
         }
 

@@ -2,7 +2,7 @@
 
 .footer {
     background-color: var(--dark-green);
-    padding: 4rem 3rem;
+    padding: 4rem 2.875rem;
     font-family: var(--secondary-font);
     color: var(--white);
     position: -webkit-sticky;
@@ -15,6 +15,10 @@
 
     @media (max-width: 768px) {
         padding: 4rem 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        padding: 3rem 1rem;
     }
 
     &__wrapper {
@@ -44,11 +48,42 @@
 
                 &--logos {
                     @include flex-content(flex, null, center);
-                    gap: .8rem;
+                    gap: .8rem; 
+
+                    img {
+                        transition: .4s var(--ease-out-quart);
+
+                        &:hover {
+                            filter: brightness(0.6);
+                        }
+                    }
                 }
 
                 &--text {
-                    font-size: clamp(1rem, 1.5vw, 1.125rem);
+                    text-decoration: none;
+                    color: var(--white);
+                    font-family: var(--secondary-font);
+                    position: relative;
+                    display: inline-flex;
+                    overflow: hidden;
+
+                    div {
+                        position: relative;
+                        transition: .9s var(--ease-out-quart);
+                        font-size: clamp(1rem, 1.5vw, 1.125rem);
+
+                        &::before {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            content: attr(data-char);
+                            transform: translateY(100%);
+                        }
+                    }
+
+                    &:hover div, &:focus div {
+                        transform: translateY(-100%);
+                    }            
                 }
             }
         }

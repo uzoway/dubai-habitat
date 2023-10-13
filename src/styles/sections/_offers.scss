@@ -5,13 +5,17 @@
     text-align: center;
     font-family: var(--secondary-font);
     color: var(--white);
-    padding: 5rem 3rem;
+    padding: 6.25rem 2.875rem;
     position: relative;
     z-index: 1;
     
 
     @media (max-width: 768px) {
-        padding: 5rem 1.5rem;
+        padding: 5rem 1.875rem;
+    }
+
+    @media (max-width: 375px) {
+        padding: 3.75rem 1rem;
     }
 
     &__wrapper {
@@ -20,7 +24,7 @@
         .offers__heading {
             overflow: hidden;
             line-height: .9;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
 
             span {
                 font-size: clamp(1rem, 1.1vw, 1.2rem);
@@ -36,7 +40,7 @@
         .offers__mainParagraph {
             @include flex-content(flex, null, null);
             flex-direction: column;
-            margin-bottom: 2rem;
+            margin-bottom: 3.5rem;
 
             .text__wrapper {
                 overflow: hidden;
@@ -64,24 +68,33 @@
                 flex-basis: 24%;
                 text-align: left;
                 background-color: var(--beige);
-                aspect-ratio: 1/1;
+                aspect-ratio: 1/.85;
                 border-radius: 10px;
                 padding: 1rem 1rem 0;
                 will-change: transform;
                 transform-style: preserve-3d;
 
+                @media (max-width: 1394px) {
+                    aspect-ratio: 1/.9;
+                }
+
+                @media (max-width: 1262px) {
+                    aspect-ratio: 1/1;
+                }
+
                 @media (max-width: 1139px) {
                     flex-basis: 31.5%;
+                    aspect-ratio: 1/.9;
                 }
 
                 @media (max-width: 976px) {
                     flex-basis: 45%;
-                    aspect-ratio: 1/1;
+                    aspect-ratio: 1/.7;
                 }
 
                 @media (max-width: 690px) {
                     flex-basis: 100%;
-                    aspect-ratio: 1/.7;
+                    aspect-ratio: 1/.4;
                 }
 
                 img {
