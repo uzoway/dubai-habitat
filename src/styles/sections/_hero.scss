@@ -519,13 +519,13 @@
     position: fixed;
     right: -100%;
     top: 0;
-    height: 100%;
+    min-height: 100vh;
     width: 50%;
     background-color: var(--white-000);
     padding: 3rem;
     @include flex-content(flex, flex-end, null);
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     font-family: var(--secondary-font);
     color: var(--dark-green);
     transition: 1s var(--ease-in-out-quart);
@@ -558,12 +558,12 @@
     }
 
     &__paragraph {
-        font-size: clamp(.9rem, 1.8vw, 1.25rem);
+        font-size: clamp(.9rem, 1.3vw, 2rem);
         line-height: 1.5;
     }
 
     &__paragraph2 {
-        font-size: clamp(.8rem, 1.2vw, 0.9rem);
+        font-size: clamp(.8rem, 1vw, 1.2rem);
         line-height: 1.5;
     }
 
